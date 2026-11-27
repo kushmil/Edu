@@ -27,6 +27,14 @@ svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:2.2;stroke
 #view{height:100%;overflow-y:auto;padding:calc(env(safe-area-inset-top,0px) + 84px) 14px 40px;scrollbar-width:none}
 #view::-webkit-scrollbar{display:none}
 .card,.pc{border-radius:38px;position:relative;overflow:hidden;color:#fff;background:radial-gradient(circle at 68% 78%,#46b4ff 0,transparent 42%),radial-gradient(circle at 50% 50%,#0a84ff 0,transparent 60%),linear-gradient(165deg,#63d9ff 0%,#0a8bff 45%,#2a93ff 100%);box-shadow:0 20px 50px rgba(10,132,255,.25)}
+.ad{border-radius:38px;position:relative;overflow:hidden;color:#fff;padding:54px 20px 20px;text-align:center;background:radial-gradient(circle at 20% 0,#7b5cff 0,transparent 55%),linear-gradient(165deg,#0a8bff 0%,#2a5cff 100%);box-shadow:0 20px 50px rgba(10,132,255,.25)}
+.adt{font-size:30px;font-weight:700;letter-spacing:-.5px;line-height:1.15}
+.ads{font-size:15px;opacity:.85;margin:8px auto 0;max-width:290px;line-height:1.4}
+.adb{display:flex;gap:10px;margin-top:18px}
+.adb a{flex:1;min-width:0;display:flex;align-items:center;justify-content:center;gap:7px;height:46px;border-radius:23px;font-size:15px;font-weight:600;transition:transform .15s}
+.adb a:active{transform:scale(.95)}.adb svg{width:20px;height:20px}
+.adb .b1{background:#fff;color:#0a6cff}.adb .b2{background:rgba(255,255,255,.22);color:#fff}
+.adn{font-size:12.5px;opacity:.65;margin-top:12px}
 .card{aspect-ratio:1.9;display:flex;align-items:center;justify-content:center}
 .mid{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:-14px}
 .big{font-size:68px;font-weight:700;letter-spacing:-2px;text-shadow:0 4px 24px rgba(0,60,160,.35)}
@@ -108,16 +116,11 @@ svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:2.2;stroke
 .bg i:nth-child(1){top:0}.bg i:nth-child(2){top:7px}.bg i:nth-child(3){top:14px}
 .cb.open{background:var(--act);color:var(--bl)}
 .cb.open .bg i:nth-child(1){top:7px;transform:rotate(45deg)}.cb.open .bg i:nth-child(2){opacity:0;transform:scaleX(0)}.cb.open .bg i:nth-child(3){top:7px;transform:rotate(-45deg)}
-.ig{position:relative;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;flex:none;overflow:hidden;transition:transform .2s}
-.ig:before{content:"";position:absolute;inset:-60%;background:conic-gradient(#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75);animation:spin 3s linear infinite}
-.ig:after{content:"";position:absolute;inset:2.5px;border-radius:50%;background:var(--tb)}
-.ig svg{position:relative;z-index:1;width:26px;height:26px;animation:wg 4.5s ease-in-out infinite}
-.ig .a{stroke-dasharray:70;animation:dr 3s ease-in-out infinite}
-.ig .b{transform-box:fill-box;transform-origin:center;animation:pu 2.2s ease-in-out infinite}
-.ig .c{animation:bl 1.4s ease-in-out infinite}
+.ig{width:52px;height:52px;border-radius:50%;background:var(--tb);border:1px solid var(--bd);display:grid;place-items:center;flex:none;color:var(--tx);transition:transform .2s}
+.ig svg{width:24px;height:24px}
 @keyframes spin{to{transform:rotate(360deg)}}@keyframes pu{50%{transform:scale(.7)}}@keyframes bl{50%{opacity:.15}}
-@keyframes wg{0%,14%,100%{transform:rotate(0)}3%{transform:rotate(-16deg)}6%{transform:rotate(13deg)}9%{transform:rotate(-8deg)}}
-@keyframes dr{0%{stroke-dashoffset:70}55%,100%{stroke-dashoffset:0}}
+
+
 .menu{position:absolute;inset:0;z-index:11;background:rgba(0,0,0,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:opacity .3s}
 .menu.on{opacity:1;pointer-events:auto}
 .mp{margin:calc(env(safe-area-inset-top,0px) + 74px) 14px 0;background:var(--pn);border:1px solid var(--bd);border-radius:30px;padding:8px;transform:translateY(-16px) scale(.96);transform-origin:top left;transition:transform .4s cubic-bezier(.2,.9,.3,1)}
@@ -157,14 +160,14 @@ function count(el,to){var t=performance.now();(function f(n){var p=Math.min((n-t
 function chrome(){var MI=[["stu","li","छात्र सूची","सभी छात्र खोजें","linear-gradient(160deg,#4ab3ff,#2b6bff)"],["calc","ca","कैलकुलेटर","हिसाब और Marks %","linear-gradient(160deg,#4bd6a0,#1c9a78)"],["info","al","सूचना","ज़रूरी बातें और मदद","linear-gradient(160deg,#ffa23a,#ff6a2a)"]];
 function mi(t,k,n,d,g,x){return '<'+t+' class="mi" '+x+'><i style="background:'+g+'">'+ic(k)+'</i><div><b>'+n+'</b><small>'+d+'</small></div></'+t+'>'}
 var items=MI.map(function(m){return mi("button",m[1],m[2],m[3],m[4],'data-a="tab" data-v="'+m[0]+'"')}).join("")+mi("button","ml","गलती सुधार Email","form भरकर भेजें","linear-gradient(160deg,#9b7bff,#6a45e8)",'data-a="mail"')+mi("a","tg","Telegram Support","PEN से जुड़े सवाल","linear-gradient(160deg,#4ab3ff,#2b6bff)",'data-a="mc" href="https://t.me/bnjhacollege" target="_blank" rel="noopener"');
-$("app").innerHTML='<div class="top"><button class="cb" id="mb" data-a="menu" aria-label="Menu"><span class="bg"><i></i><i></i><i></i></span></button><label class="sr">'+ic("se")+'<input id="q" type="search" placeholder="नाम या PEN खोजें" autocomplete="off" enterkeyhint="search"></label><button class="cb" data-a="th" aria-label="Theme"><span class="moon">'+ic("mo")+'</span><span class="sun">'+ic("su")+'</span></button><a class="ig" href="https://instagram.com/ik.ansu" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"><defs><linearGradient id="igg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#feda75"/><stop offset=".45" stop-color="#d62976"/><stop offset="1" stop-color="#962fbf"/></linearGradient></defs><rect class="a" x="3" y="3" width="18" height="18" rx="5.5" stroke="url(#igg)"/><circle class="b" cx="12" cy="12" r="4" stroke="url(#igg)"/><circle class="c" cx="17.5" cy="6.5" r="1.1" fill="#d62976" stroke="none"/></svg></a></div><div class="menu" id="menu" data-a="mclose"><div class="mp">'+items+'</div></div><div id="view"></div>';
+$("app").innerHTML='<div class="top"><button class="cb" id="mb" data-a="menu" aria-label="Menu"><span class="bg"><i></i><i></i><i></i></span></button><label class="sr">'+ic("se")+'<input id="q" type="search" placeholder="नाम या PEN खोजें" autocomplete="off" enterkeyhint="search"></label><button class="cb" data-a="th" aria-label="Theme"><span class="moon">'+ic("mo")+'</span><span class="sun">'+ic("su")+'</span></button><a class="ig" href="https://instagram.com/anshu.yr" target="_blank" rel="noopener" aria-label="Instagram">'+ic("ig")+'</a></div><div class="menu" id="menu" data-a="mclose"><div class="mp">'+items+'</div></div><div id="view"></div>';
 var dt;$("q").oninput=function(e){q=e.target.value;if(tab!="stu")return setTab("stu");clearTimeout(dt);dt=setTimeout(apply,120)};setTab(tab)}
 function menu(o){var m=$("menu");if(!m)return;m.classList.toggle("on",o);$("mb").classList.toggle("open",o)}
 function setTab(t){tab=t;$("app").dataset.tab=t;document.querySelectorAll(".mi[data-a=tab]").forEach(function(b){b.classList.toggle("on",b.dataset.v==t)});var v=$("view");v.scrollTop=0;
 v.innerHTML=t=="stu"?vStu():t=="calc"?vCalc():vInfo();if(t=="stu")initStu();if(t=="calc"){cdisp()}}
-function vStu(){var a=D.filter(function(s){return s[3]==11}).length;return '<div class="card">'+stars()+'<span class="dm">PEN Portal</span><div class="mid"><div class="big" id="big">0</div><div class="pl">कुल छात्र &middot; XI: '+a.toLocaleString("en-IN")+' &middot; XII: '+(D.length-a).toLocaleString("en-IN")+'</div></div><div class="cn">पं. बी.एन. झा मेमोरियल इंटर कॉलेज</div></div>'+
+function vStu(){var a=D.filter(function(s){return s[3]==11}).length;return '<div class="ad"><span class="dm">Ad Banner</span><div class="adt">Book Your Ad Banner</div><div class="ads">Insta profile, YouTube channel या कोई भी ad यहाँ लगवाएँ</div><div class="adb"><a class="b1" href="https://t.me/eiqza" target="_blank" rel="noopener">'+ic("tg")+'@eiqza</a><a class="b2" href="https://instagram.com/anshu.yr" target="_blank" rel="noopener">'+ic("ig")+'@anshu.yr</a></div><div class="adn">Ad के लिए Telegram या Instagram पर संपर्क करें</div></div>'+
 '<div class="acts">'+[["all",ic("li"),"सभी"],["11","XI","कक्षा 11"],["12","XII","कक्षा 12"],["na",ic("al"),"PEN नहीं"]].map(function(x){return '<button data-a="flt" data-v="'+x[0]+'" class="'+(flt==x[0]?"on":"")+'"><i>'+x[1]+'</i>'+x[2]+'</button>'}).join("")+'</div><div class="pn"><div class="ph"><h4>छात्र सूची</h4><span id="cnt"></span></div><div id="list"></div><div id="more" style="height:1px"></div></div>'}
-function initStu(){count($("big"),D.length);if(io)io.disconnect();io=new IntersectionObserver(function(es){if(es[0].isIntersecting&&shown<list.length){chunk();io.unobserve($("more"));requestAnimationFrame(function(){io.observe($("more"))})}},{root:$("view"),rootMargin:"1400px 0px"});$("q").value=q;apply()}
+function initStu(){if(io)io.disconnect();io=new IntersectionObserver(function(es){if(es[0].isIntersecting&&shown<list.length){chunk();io.unobserve($("more"));requestAnimationFrame(function(){io.observe($("more"))})}},{root:$("view"),rootMargin:"1400px 0px"});$("q").value=q;apply()}
 function row(s){var n=tc(s[0]),h=[].reduce.call(s[0],function(a,c){return a+c.charCodeAt(0)*7},0)%360;
 return '<button class="row" data-a="stu" data-v="'+s[5]+'"><div class="av" style="--h:'+h+'">'+esc(n[0])+'</div><div class="in"><b>'+esc(n)+'</b><span>पिता: '+esc(tc(s[1]))+'</span></div><div class="tr">'+(s[2]?'':'<em>N/A</em>')+'<u>'+(s[3]==11?"XI":"XII")+'</u>'+ic("ch")+'</div></button>'}
 function chunk(){var e=Math.min(shown+PAGE,list.length),h="";for(var i=shown;i<e;i++){var L=list[i][0][0].toUpperCase();if(L!==lastL){lastL=L;h+='<div class="lt">'+esc(L)+'</div>'}h+=row(list[i])}$("list").insertAdjacentHTML("beforeend",h);shown=e}
@@ -224,7 +227,7 @@ x.fillStyle=al(.75);x.font="500 20px "+F;x.textAlign="center";x.fillText("PEN Po
 c.toBlob(function(b){var a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="PEN_"+s[0].replace(/\s+/g,"_")+".png";document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(a.href)},4000);toast("PEN कार्ड डाउनलोड हो गया \u2713")},"image/png")}
 /* info */
 function vInfo(){return '<h4 style="font-size:30px;font-weight:600;margin:4px 6px 16px">सूचना</h4><div class="pn"><h4>ज़रूरी बातें</h4>'+noteH()+'</div><div class="pn"><h4>मदद</h4>'+
-[["tg","Telegram Support","PEN से जुड़े सवाल पूछें","linear-gradient(160deg,#4ab3ff,#2b6bff)","https://t.me/bnjhacollege"],["ml","गलती सुधार Email","form भरकर भेजें","linear-gradient(160deg,#ffa23a,#ff6a2a)",""],["ig","Instagram","Made by AnshuRajhans","linear-gradient(160deg,#ff5c9a,#8a4dff)","https://instagram.com/ik.ansu"]].map(function(x){var h='<i style="background:'+x[3]+'">'+ic(x[0])+'</i><div><b>'+x[1]+'</b><small>'+x[2]+'</small></div>';return x[4]?'<a class="ex" href="'+x[4]+'" target="_blank" rel="noopener">'+h+'</a>':'<button class="ex" data-a="mail">'+h+'</button>'}).join("")+'</div>'}
+[["tg","Telegram Support","PEN से जुड़े सवाल पूछें","linear-gradient(160deg,#4ab3ff,#2b6bff)","https://t.me/bnjhacollege"],["ml","गलती सुधार Email","form भरकर भेजें","linear-gradient(160deg,#ffa23a,#ff6a2a)",""],["ig","Instagram","Made by AnshuRajhans","linear-gradient(160deg,#ff5c9a,#8a4dff)","https://instagram.com/anshu.yr"]].map(function(x){var h='<i style="background:'+x[3]+'">'+ic(x[0])+'</i><div><b>'+x[1]+'</b><small>'+x[2]+'</small></div>';return x[4]?'<a class="ex" href="'+x[4]+'" target="_blank" rel="noopener">'+h+'</a>':'<button class="ex" data-a="mail">'+h+'</button>'}).join("")+'</div>'}
 /* calculator */
 var C={a:null,op:null,cur:"0",fresh:1,hs:""};
 function vCalc(){var K=[["AC","f"],["bk","f"],["%","f"],["\u00f7","o"],["7"],["8"],["9"],["\u00d7","o"],["4"],["5"],["6"],["\u2212","o"],["1"],["2"],["3"],["+","o"],["0","z"],[".",""],["=","o"]];
